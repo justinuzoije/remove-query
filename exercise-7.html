@@ -14,24 +14,33 @@
     3. the ability to edit an existing task
 
     */
-    $(document).ready(function() {
-      $('#add-button').on('click', function() {
-        var textValue = $('#description').val();
-        var fragment = "<li>" + textValue + "<button class='remove'>Remove</button></li>";
 
-        $("#todo-list").append(fragment);
+
+    $(document).ready(function() {
+
+      //This adds functionality to the add button, when you click on it the following events happen
+      $('#add-button').on('click', function() {
+
+        //This gets the text value from the description
+        var textValue = $('#description').val();
+
+        //This creates a list item made of the text value concatenated to a button called Remove
+        var listItem = "<li>" + textValue + "<button class='remove'>Remove</button></li>";
+
+        //This attaches the listItem to the todo-list class
+        $("#todo-list").append(listItem);
         
 
-        //Makes the text field blank 
+        //Makes the text field blank after entering in the information
         $('#description').val('');
       });
 
-      /*Prototype : .on( events [, selector ] [, data ], handler )*/
-
-      //This adds a function to todo-list
+      //This adds functionality to the remove button, when you click on it the following events happen
       $("#todo-list").on('click', '.remove', function() {
 
-        //selects the closest ancestor of (this) (which is the button) that is of the type il
+        //A variable to store what we are looking for
+        //This refers to what we clocked on in this case the remove button 
+        //Closest looks for the closest relative to the button that is the il type
         var self = $(this).closest("li");
 
         //This removes the li belonging to the button
