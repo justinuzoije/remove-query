@@ -18,7 +18,7 @@
       $('#add-button').on('click', function() {
         var textValue = $('#description').val();
         var fragment = "<li>" + textValue + "<button class='remove'>Remove</button></li>";
-        // var fragment = "<tr><td  class='col1'>" + value1 + "</td><td class='col2'>" + value2 + "</td><td><span class='spnSelected'>Select</span></td></tr>";
+
         $("#todo-list").append(fragment);
         
 
@@ -48,7 +48,7 @@
       margin: auto;
     }
 
-    /*Prototype : .on( events [, selector ] [, data ], handler )*/
+    
 
     #description, #search, #todo-list {
       font-size: 1.5em;
